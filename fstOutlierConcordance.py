@@ -2,6 +2,7 @@
 
 from comline import ComLine
 from bayescan import BayeScan
+from lositan import Lositan
 
 import sys
 

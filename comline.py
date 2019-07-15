@@ -12,6 +12,11 @@ class ComLine():
 							required=True,
 							help="Specify a bayescan fst.txt file for input."
 		)
+		parser.add_argument("-l", "--lositan",
+							dest='lositan',
+							required=True,
+							help="Specify a lositan summary file for input."
+		)
 		parser.add_argument("-o", "--out",
 							dest='out',
 							default="output.txt",
@@ -23,10 +28,17 @@ class ComLine():
 							default=0.05,
 							help="Specify the fdr for bayescan summary."
 		)
+		parser.add_argument("-p", "--pthreshold",
+							dest="pthreshold",
+							type=float,
+							default=0.025,
+							help="Specify threshold for parsing lositan output."
+		)
 		self.args = parser.parse_args()
 
 		#check if files exist
 		self.exists( self.args.bayescan )
+		self.exists( self.args.lositan )
 
 
 
