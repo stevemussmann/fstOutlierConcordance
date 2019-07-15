@@ -131,3 +131,9 @@ lines(c(log10(FDR),log10(FDR)),c(-1,1),lwd=2)
 return(list("outliers"=outliers,"nb_outliers"=length(outliers)))
 }
 
+#run function on data
+result <- plot_bayescan(opt$file, FDR=opt$fdr)
+
+#print list of outlier loci to file
+#the "invisible" function suppresses junk from being printed to stdout
+invisible(lapply(result$outliers, write, "bayescan.outliers.txt", append=TRUE, ncolumns=1))
