@@ -3,6 +3,7 @@
 from comline import ComLine
 from bayescan import BayeScan
 from lositan import Lositan
+from compare import Compare
 
 import sys
 
@@ -19,6 +20,11 @@ def main():
 	los = Lositan(input.args.lositan,0.025)
 	los.readLositan()
 	los.printSignificant()
+
+	#compare outputs
+	com = Compare("bayescan.outliers.txt","lositan.positive_selection.txt")
+	com.readInput()
+	com.printResults()
 
 
 main()
