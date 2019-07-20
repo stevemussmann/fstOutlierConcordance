@@ -15,3 +15,17 @@ class Lositan():
 					locus=locus.replace("Locus","")
 					self.d[locus] = float(p)
 		print(self.d)
+
+	def printSignificant(self):
+		fhb = open("lositan.balancing_selection.txt", 'w')
+		fhp = open("lositan.positive_selection.txt", 'w')
+		for locus,pval in self.d.items():
+			if(pval < self.bal):
+				print(locus,"\t",pval,"\t","balance")
+				fhb.write(locus)
+				fhb.write("\n")
+			elif(pval > self.pos):
+				print(locus,"\t",pval,"\t","positive")
+				fhp.write(locus)
+				fhp.write("\n")
+				

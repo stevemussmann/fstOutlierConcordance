@@ -133,7 +133,7 @@ return(list("outliers"=outliers,"nb_outliers"=length(outliers)))
 
 #run function on data
 result <- plot_bayescan(opt$file, FDR=opt$fdr)
-
+file.remove("bayescan.outliers.txt")
 #print list of outlier loci to file
 #the "invisible" function suppresses junk from being printed to stdout
 invisible(lapply(result$outliers, write, "bayescan.outliers.txt", append=TRUE, ncolumns=1))
