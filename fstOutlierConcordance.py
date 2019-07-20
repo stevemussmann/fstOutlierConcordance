@@ -12,6 +12,8 @@ def main():
 	bsCommand = bs.build_command()
 	bs.run_program(bsCommand)
 	print(input.args.bayescan)
+	los = Lositan(input.args.lositan,0.025)
+	los.readLositan()
 
 
 main()
