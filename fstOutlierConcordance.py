@@ -24,7 +24,7 @@ def main():
 	#compare outputs
 	com = Compare("bayescan.outliers.txt","lositan.positive_selection.txt")
 	com.readInput()
-	com.printResults()
+	com.printResults(input.args.vcf)
 
 
 main()

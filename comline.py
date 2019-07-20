@@ -34,11 +34,17 @@ class ComLine():
 							default=0.025,
 							help="Specify threshold for parsing lositan output."
 		)
+		parser.add_argument("-v", "--vcf",
+							dest='vcf',
+							required=True,
+							help="Specify a vcf file for input."
+		)
 		self.args = parser.parse_args()
 
 		#check if files exist
 		self.exists( self.args.bayescan )
 		self.exists( self.args.lositan )
+		self.exists( self.args.vcf )
 
 
 
